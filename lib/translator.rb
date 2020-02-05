@@ -4,10 +4,10 @@ require 'yaml'
  
 
 def load_library(file)
- response = {"meaning" => {}, "emoticon" => {}}
+ response = {"get_meaning" => {}, "emoticon" => {}}
  library = YAML.load_file(file)
  library.each do |trans, emoticon|
-   response["meaning"][emoticon[1]] = trans
+   response["get_meaning"][emoticon[1]] = trans
    response["emoticon"][emoticon[0]] = emoticon[0]
  end
  response
